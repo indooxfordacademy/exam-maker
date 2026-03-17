@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // 2. INITIALIZE GEMINI (It reads the secret key you just added)
-const genAI = new GoogleGenerativeAI(process.env.AIzaSyD_8sVvUDBi-rJMFXKMXFI30cNiFu03SAg);
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const upload = multer({ dest: 'uploads/' });
 app.use(express.static('public'));

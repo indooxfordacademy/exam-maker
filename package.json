@@ -6,7 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.2.1",
+    "@anthropic-ai/sdk": "^0.36.0",
     "docx": "^8.2.3",
     "express": "^4.18.2",
     "multer": "^1.4.5-lts.1"

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indo Oxford Exam Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #EEF2FF; }
+        .card { border-top: 5px solid #1A237E; }
+        .header-text { color: #1A237E; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm p-4">
+                    <h2 class="text-center header-text mb-4">Indo Oxford Academy</h2>
+                    <h5 class="text-center text-muted mb-4">Automated Exam Paper Generator</h5>
+                    
+                    <form action="/generate-exam" method="POST" enctype="multipart/form-data">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Class</label>
+                                <input type="number" class="form-control" name="classLevel" required min="1" max="8">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-control" name="subject" placeholder="e.g. Hindi, Maths" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Exam Type</label>
+                                <select class="form-select" name="examType">
+                                    <option value="FA1">FA1</option>
+                                    <option value="FA2">FA2</option>
+                                    <option value="SA1">SA1</option>
+                                    <option value="SA2">SA2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Upload Source Material (Images/PDFs)</label>
+                            <input class="form-control" type="file" name="sourceFiles" multiple required>
+                            <div class="form-text">Upload workbook pictures or chapter PDFs here.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100" style="background-color: #1A237E;">
+                            Generate Exam Papers
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
